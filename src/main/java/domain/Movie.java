@@ -79,4 +79,14 @@ public class Movie {
     public void setRunningTime(int runningTime) {
         this.runningTime = runningTime;
     }
+
+    public void update(String title, String director, String genre,
+                       int year, double rating, int runningTime) {
+        this.title = title;
+        this.director = director;
+        this.genre = genre;
+        this.year = year;
+        this.rating = rating;
+        this.runningTime = runningTime;
+    }
 }
