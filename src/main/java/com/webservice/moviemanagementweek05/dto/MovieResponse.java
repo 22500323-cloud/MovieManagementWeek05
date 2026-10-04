@@ -1,6 +1,6 @@
-package dto;
+package com.webservice.moviemanagementweek05.dto;
 
-import domain.Movie;
+import com.webservice.moviemanagementweek05.domain.Movie;
 
 public class MovieResponse {
 

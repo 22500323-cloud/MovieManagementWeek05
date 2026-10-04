@@ -1,0 +1,56 @@
+### CREATE
+POST http://localhost:8080/api/movies
+Content-Type: application/json
+
+{
+"title": "Parasite",
+"director": "Bong Joon-ho",
+"genre": "Drama",
+"year": 2019,
+"rating": 9.0,
+"runningTime": 132
+}
+
+### READ ALL
+GET http://localhost:8080/api/movies
+
+### READ ONE
+GET http://localhost:8080/api/movies/1
+
+### UPDATE
+PUT http://localhost:8080/api/movies/1
+Content-Type: application/json
+
+{
+  "title": "Parasite",
+  "director": "Bong Joon-ho",
+  "genre": "Thriller",
+  "year": 2019,
+  "rating": 9.5,
+  "runningTime": 132
+}
+
+### CHECK UPDATE
+GET http://localhost:8080/api/movies/1
+
+### DELETE
+DELETE http://localhost:8080/api/movies/1
+
+### CHECK DELETE
+GET http://localhost:8080/api/movies/1
+
+### 없는 영화 조회
+GET http://localhost:8080/api/movies/999
+
+### 잘못된 입력 테스트
+POST http://localhost:8080/api/movies
+Content-Type: application/json
+
+{
+  "title": "",
+  "director": "Bong Joon-ho",
+  "genre": "Drama",
+  "year": 2019,
+  "rating": 9.0,
+  "runningTime": 132
+}

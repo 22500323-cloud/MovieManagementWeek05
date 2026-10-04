@@ -1,6 +1,6 @@
-package repository;
+package com.webservice.moviemanagementweek05.repository;
 
-import domain.Movie;
+import com.webservice.moviemanagementweek05.domain.Movie;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,6 @@ import java.util.Optional;
 public class MemoryMovieRepository implements MovieRepository {
 
     private final List<Movie> movies = new ArrayList<>();
-
     private Long nextId = 1L;
 
     @Override
@@ -45,5 +44,13 @@ public class MemoryMovieRepository implements MovieRepository {
     @Override
     public void deleteById(Long id) {
         movies.removeIf(movie -> movie.getId().equals(id));
+    }
+
+    // 장르로 영화 검색
+    @Override
+    public List<Movie> findByGenre(String genre) {
+        return movies.stream()
+                .filter(movie -> movie.getGenre().equalsIgnoreCase(genre))
+                .toList();
     }
 }

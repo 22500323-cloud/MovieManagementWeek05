@@ -1,6 +1,6 @@
-package repository;
+package com.webservice.moviemanagementweek05.repository;
 
-import domain.Movie;
+import com.webservice.moviemanagementweek05.domain.Movie;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,4 +14,6 @@ public interface MovieRepository {
     Optional<Movie> findById(Long id);
 
     void deleteById(Long id);
+
+    List<Movie> findByGenre(String genre);
 }

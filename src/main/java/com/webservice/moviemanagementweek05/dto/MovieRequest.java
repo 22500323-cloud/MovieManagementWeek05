@@ -1,4 +1,4 @@
-package dto;
+package com.webservice.moviemanagementweek05.dto;
 
 public class MovieRequest {
 

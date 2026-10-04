@@ -1,4 +1,4 @@
-package domain;
+package com.webservice.moviemanagementweek05.domain;
 
 public class Movie {
 
