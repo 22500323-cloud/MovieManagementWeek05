@@ -36,7 +36,7 @@ Spring Boot를 이용하여 영화 정보를 관리하는 REST API CRUD 프로�
 
 ## 3. 프로젝트 구조
 
-```text
+text
 src
 └── main
     └── java
@@ -63,13 +63,13 @@ src
             │   └── MovieService.java
             │
             └── MovieManagementWeek05Application.java
-```
+
 
 ---
 
 ## 4. 계층 구조
 
-```text
+text
 Client
   ↓
 MovieController
@@ -81,7 +81,7 @@ MovieRepository
 MemoryMovieRepository
   ↓
 ArrayList<Movie>
-```
+
 
 Controller에서는 HTTP 요청을 받고 Service를 호출합니다.
 
@@ -110,12 +110,12 @@ Repository에서는 영화 데이터를 저장하고 조회합니다.
 
 ### Request
 
-```http
+http
 POST /api/movies
 Content-Type: application/json
-```
 
-```json
+
+json
 {
   "title": "Parasite",
   "director": "Bong Joon-ho",
@@ -124,11 +124,11 @@ Content-Type: application/json
   "rating": 9.0,
   "runningTime": 132
 }
-```
+
 
 ### Response
 
-```json
+json
 {
   "id": 1,
   "title": "Parasite",
@@ -138,7 +138,7 @@ Content-Type: application/json
   "rating": 9.0,
   "runningTime": 132
 }
-```
+
 
 영화가 등록되면 ID가 자동으로 생성됩니다.
 
@@ -146,13 +146,13 @@ Content-Type: application/json
 
 ## 7. 전체 영화 조회
 
-```http
+http
 GET /api/movies
-```
+
 
 ### Response
 
-```json
+json
 [
   {
     "id": 1,
@@ -164,15 +164,15 @@ GET /api/movies
     "runningTime": 132
   }
 ]
-```
+
 
 ---
 
 ## 8. 영화 한 개 조회
 
-```http
+http
 GET /api/movies/1
-```
+
 
 존재하는 ID라면 해당 영화 정보를 반환합니다.
 
@@ -181,13 +181,12 @@ GET /api/movies/1
 ---
 
 ## 9. 영화 수정
-
-```http
+http
 PUT /api/movies/1
 Content-Type: application/json
-```
 
-```json
+
+json
 {
   "title": "Parasite",
   "director": "Bong Joon-ho",
@@ -196,7 +195,7 @@ Content-Type: application/json
   "rating": 9.5,
   "runningTime": 132
 }
-```
+
 
 수정된 영화 정보를 반환합니다.
 
@@ -204,9 +203,9 @@ Content-Type: application/json
 
 ## 10. 영화 삭제
 
-```http
+http
 DELETE /api/movies/1
-```
+
 
 삭제에 성공하면 `204 No Content`를 반환합니다.
 
@@ -220,7 +219,7 @@ DELETE /api/movies/1
 
 예를 들어 제목이 비어 있으면:
 
-```json
+json
 {
   "title": "",
   "director": "Bong Joon-ho",
@@ -229,15 +228,15 @@ DELETE /api/movies/1
   "rating": 9.0,
   "runningTime": 132
 }
-```
+
 
 다음과 같이 `400 Bad Request`가 반환됩니다.
 
-```json
+json
 {
   "message": "Title is required"
 }
-```
+
 
 또한 다음과 같은 입력을 검사합니다.
 
@@ -256,15 +255,15 @@ DELETE /api/movies/1
 
 추가 기능으로 장르 검색을 구현했습니다.
 
-```http
+http
 GET /api/movies?genre=Drama
-```
+
 
 예를 들어 `Drama`를 검색하면 Drama 장르의 영화만 반환합니다.
 
 ### 테스트 데이터
 
-```json
+json
 {
   "title": "Parasite",
   "director": "Bong Joon-ho",
@@ -273,9 +272,9 @@ GET /api/movies?genre=Drama
   "rating": 9.0,
   "runningTime": 132
 }
-```
 
-```json
+
+json
 {
   "title": "Inception",
   "director": "Christopher Nolan",
@@ -284,13 +283,13 @@ GET /api/movies?genre=Drama
   "rating": 8.8,
   "runningTime": 148
 }
-```
+
 
 다음 요청:
 
-```http
+http
 GET /api/movies?genre=Drama
-```
+
 
 을 보내면 `Drama` 장르인 `Parasite`가 조회됩니다.
 
@@ -300,17 +299,17 @@ GET /api/movies?genre=Drama
 
 프로젝트 폴더에서 다음 명령어를 실행합니다.
 
-```powershell
+powershell
 .\gradlew bootRun
-```
+
 
 또는 IntelliJ에서 `MovieManagementWeek05Application`을 실행합니다.
 
 서버가 실행되면 다음 주소를 사용할 수 있습니다.
 
-```text
+text
 http://localhost:8080
-```
+
 
 ---
 
