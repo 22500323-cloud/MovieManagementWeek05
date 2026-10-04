@@ -2,10 +2,10 @@ package com.webservice.moviemanagementweek05.controller;
 
 import com.webservice.moviemanagementweek05.dto.MovieRequest;
 import com.webservice.moviemanagementweek05.dto.MovieResponse;
+import com.webservice.moviemanagementweek05.service.MovieService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.webservice.moviemanagementweek05.service.MovieService;
 
 import java.util.List;
 
@@ -52,5 +52,13 @@ public class MovieController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         movieService.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    // 장르로 영화 검색
+    @GetMapping(params = "genre")
+    public ResponseEntity<List<MovieResponse>> findByGenre(
+            @RequestParam String genre) {
+
+        return ResponseEntity.ok(movieService.findByGenre(genre));
     }
 }

@@ -46,11 +46,32 @@ GET http://localhost:8080/api/movies/999
 POST http://localhost:8080/api/movies
 Content-Type: application/json
 
+
+### 영화 1 등록
+POST http://localhost:8080/api/movies
+Content-Type: application/json
+
 {
-  "title": "",
+  "title": "Parasite",
   "director": "Bong Joon-ho",
   "genre": "Drama",
   "year": 2019,
   "rating": 9.0,
   "runningTime": 132
 }
+
+### 영화 2 등록
+POST http://localhost:8080/api/movies
+Content-Type: application/json
+
+{
+  "title": "Inception",
+  "director": "Christopher Nolan",
+  "genre": "Sci-Fi",
+  "year": 2010,
+  "rating": 8.8,
+  "runningTime": 148
+}
+
+### 장르 검색
+GET http://localhost:8080/api/movies?genre=Drama
