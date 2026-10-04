@@ -3,12 +3,14 @@ package service;
 import domain.Movie;
 import dto.MovieRequest;
 import dto.MovieResponse;
+import org.springframework.stereotype.Service;
 import repository.MemoryMovieRepository;
 import repository.MovieRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class MovieService {
 
     private final MovieRepository movieRepository;
